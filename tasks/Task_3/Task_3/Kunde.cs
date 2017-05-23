@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 using System.IO;
+using Task_3;
 
-
-namespace Task_2
-{public class Kunde
+namespace Task_3
+{
+    public class Kunde : IKunde
     {
         private int m_kundennummer;
         private string m_vorname;
@@ -17,9 +18,9 @@ namespace Task_2
         private string pfad = @"C:\Users\user\Desktop\Task2.txt";
 
 
-        public Kunde ( string newVorname, string newNachname)
+        public Kunde(string newVorname, string newNachname)
         {
-            
+
             if (newVorname == "") throw new ArgumentOutOfRangeException("Vorname muss vorhanden sein");
             if (newNachname == "") throw new ArgumentOutOfRangeException("Nachname muss vorhanden sein");
 
@@ -33,10 +34,10 @@ namespace Task_2
                 File.WriteAllText(pfad, "1");
                 m_kundennummer = 1;
             }
-            
+
             m_vorname = newVorname;
             m_nachname = newNachname;
-            
+
         }
 
         public int Kundennummer
@@ -60,41 +61,20 @@ namespace Task_2
             get { return m_geb_datum; }
         }
 
-
-
-
-    }
-    class Program
-    {
-        static void Main(string[] args)
+        //----under construction --------------
+        public void Print()
         {
-            string temp_vorname, temp_nachname;
-
-            TextInfo ti = new CultureInfo("de-de", false).TextInfo;
-
-
-
-
-            Console.WriteLine("Bitte Vorname eingeben :\n");
-            temp_vorname = Console.ReadLine();
-            Console.WriteLine("Bitte Nachname eingeben :\n");
-            temp_nachname = Console.ReadLine();
-            Kunde a = new Kunde(temp_vorname, temp_nachname);
-            
-            
-            Console.WriteLine("Hallo " + a.Kundennummer + " " + ti.ToTitleCase(a.Vorname) + " " + ti.ToTitleCase(a.Nachname) + "\n");
-
-            Console.WriteLine("Bitte anderen Nachnamen eingeben :\n");
-            a.Nachname = Console.ReadLine();
-            Console.WriteLine("Bitte Geburtsdatum eingeben :\n");
-            a.GebDatum = DateTime.Parse(Console.ReadLine());
-            Console.Clear();
-            
-            Console.WriteLine("--------------------------------------------------------\n");
-            Console.WriteLine(ti.ToTitleCase(a.Vorname) + " " + ti.ToTitleCase(a.Nachname) + "\n" + "Geb.Datum : " + a.GebDatum.Day + "." + a.GebDatum.Month + "." + a.GebDatum.Year + "\n" + "Kundennummer : " + a.Kundennummer + "\n");
-            Console.WriteLine("--------------------------------------------------------\n");
-
-
+            Console.WriteLine("Jetzt passiert was !");
         }
+
+        #region IKundenname
+
+        public virtual void PrintKundeData()
+        {
+            Console.Out.WriteLine("{0} {1}", Vorname, Nachname);
+        }
+        #endregion
+
+
     }
 }
