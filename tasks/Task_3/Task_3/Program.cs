@@ -42,10 +42,22 @@ namespace Task_2
             Console.WriteLine("--------------------------------------------------------\n");
 
             
-            a.Print();
-            a.PrintKundeData();
+            //a.Print();
+            //a.PrintKundeData();
             NochEineKlasse b = new NochEineKlasse();
-            b.Print();
+            //b.Print();
+
+            var liste = new List<IKunde>();
+            liste.Add(a);
+            liste.Add(b);
+            liste.Add(new NochEineKlasse());
+
+            foreach (var item in liste)
+            {
+                item.Print();
+            }
+            
+
         }
     }
 }
