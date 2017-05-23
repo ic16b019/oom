@@ -8,7 +8,7 @@ using System.IO;
 using Task_3;
 
 
-namespace Task_2
+namespace Task_3
 {
     
     class Program

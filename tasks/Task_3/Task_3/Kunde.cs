@@ -65,6 +65,7 @@ namespace Task_3
         public void Print()
         {
             Console.WriteLine("Jetzt passiert was !");
+            Console.Out.WriteLine("{0} {1}", Vorname, Nachname);
         }
 
         #region IKundenname
