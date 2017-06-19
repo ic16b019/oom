@@ -8,6 +8,7 @@ using System.IO;
 using Task_4;
 using Newtonsoft.Json;
 
+
 // -----------under construction ------------------------
 namespace Task_4
 {
@@ -27,7 +28,7 @@ namespace Task_4
             temp_vorname = Console.ReadLine();
             Console.WriteLine("Bitte Nachname eingeben :\n");
             temp_nachname = Console.ReadLine();
-            Kunde a = new Kunde(temp_vorname, temp_nachname);
+            ss a = new ss(temp_vorname, temp_nachname);
 
 
             Console.WriteLine("Hallo " + a.Kundennummer + " " + ti.ToTitleCase(a.Vorname) + " " + ti.ToTitleCase(a.Nachname) + "\n");
@@ -53,6 +54,7 @@ namespace Task_4
 
             string s = JsonConvert.SerializeObject(a);
             File.AppendAllText(@"C:\Users\user\Desktop\Kunde.json", s);
+            DeSerialize.test();
 
             
 

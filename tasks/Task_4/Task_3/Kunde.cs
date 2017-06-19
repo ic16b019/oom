@@ -9,7 +9,7 @@ using Task_4;
 
 namespace Task_4
 {
-    public class Kunde : IKunde
+    public class ss : IKunde
     {
         private int m_kundennummer;
         private string m_vorname;
@@ -18,7 +18,7 @@ namespace Task_4
         private string pfad = @"C:\Users\user\Desktop\Task2.txt";
 
 
-        public Kunde(string newVorname, string newNachname)
+        public ss(string newVorname, string newNachname)
         {
 
             if (newVorname == "") throw new ArgumentOutOfRangeException("Vorname muss vorhanden sein");

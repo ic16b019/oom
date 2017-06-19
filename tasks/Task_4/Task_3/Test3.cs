@@ -15,8 +15,8 @@ namespace Task_4
         [Test]
         public void VornamenSindUngleich()
         {
-            var t1 = new Kunde("Karli","Burli");
-            var t2 = new Kunde("Hansi", "Burli");
+            var t1 = new ss("Karli","Burli");
+            var t2 = new ss("Hansi", "Burli");
 
             Assert.AreNotEqual(t1.Vorname, t2.Vorname);
         }

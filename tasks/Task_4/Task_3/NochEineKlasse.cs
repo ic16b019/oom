@@ -28,7 +28,7 @@ namespace Task_4
         //----under construction --------------
         public void Print()
         {
-            Console.WriteLine("Jetzt passiert schon wieder was !");
+            Console.WriteLine("Jetzt passiert schon wieder was wg des Interfaces!");
             Console.Out.WriteLine("{0} {1}", m_vorname, m_nachname);
         }
     }

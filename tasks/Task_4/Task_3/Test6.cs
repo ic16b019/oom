@@ -11,16 +11,17 @@ using System.IO;
 namespace Task_4
 {
     [TestFixture]
-    public class Test4
+    public class Test6
     {
         [Test]
-        public void IchFehle()
+        public void NachnamePasst()
         {
-            string newTick = File.ReadAllText(@"C:\Users\user\Desktop\Kunde - Kopie.json");
-            ss s = JsonConvert.DeserializeObject<ss>(newTick);
+            var x = new ss("A", "B");
+            Assert.IsTrue(x.Nachname == "B");
 
-            Assert.AreNotEqual(s.Nachname,"Pöll");
         }
 
     }
 }
+
+
